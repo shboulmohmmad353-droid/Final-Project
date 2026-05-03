@@ -1,0 +1,67 @@
+
+
+Final project 
+
+
+Project name:
+	*** FractureNet_Multi_Task
+
+programming text editor:
+	*** colab research google.
+
+programming language:
+	*** python.
+
+libraries in the code:
+	1-pip install numpy.
+	2-pip install matplotlib.
+	3-pip install pillow.
+	4-pip install tqdm.
+	5-pip install opencv-python.
+	6-pip install tensorflow.
+	7-pip install scikit-learn.
+	8-pip install seaborn.
+	9-pip install albumentations.
+
+Data source:
+	*** kaggle.
+
+Data name:
+	*** FracAtlas Original Dataset.
+
+Click this link https:
+	*** https://www.kaggle.com/datasets/mahmudulhasantasin/fracatlas-original-dataset .
+
+About Dataset:
+	1-We present FracAtlas, a new dataset of X-Ray scans curated from the images collected from 3 major hospitals in Bangladesh. 
+	2-Our dataset includes 4,083 images that have been manually annotated for bone fracture classification, localization, and segmentation with the help of 2 expert radiologists and an orthopedist using the open-source labeling platform, makesense.ai. 
+	3-There are 717 images with 922 instances of fractures.
+
+FracAtlas: 
+	*A Dataset for Fracture Classification, Localization and Segmentation.
+
+Class names:
+	1-Fractured    :   717  (17.6%).
+  	2-Non-Fractured:  3366  (82.4%).
+
+Dataset Contents:
+
+	*** Training Data Number of Images: 2858 .
+	*** Validation Data Number of Images: 612 .
+	*** Test Data Number of Images: 613.
+ 	*** Total        :  4083.
+
+License:
+
+	*** The Fractured X-ray Images dataset .
+
+
+Models used:
+	***EfficientNetV2S 
+	***EfficientNetB0 
+	***EfficientNetB3 
+	***EfficientNetB4
+	***ResNet50V2 
+
+
+
