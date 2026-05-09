@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FractureVision | DenseNet AI</title>
+    <!-- SEO -->
+    <meta name="description" content="Advanced Bone Fracture Detection using DenseNet121 Multi-Task Learning.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FractureVision <span style="font-weight: 300;">DenseNet</span></h1>
+            <p>Intelligent X-Ray Diagnostics & Multi-Task Analysis</p>
+        </header>
+
+        <main class="main-grid">
+            <!-- Left Side: Upload -->
+            <div class="glass-card upload-section">
+                <div class="card-header">
+                    <h2><i class="fa-solid fa-upload"></i> Patient Image</h2>
+                    <p style="color: var(--text-dim); margin-top: 0.5rem;">Upload an X-ray image for instant analysis</p>
+                </div>
+
+                <div class="drop-zone" id="dropZone">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <p>Drag and drop image or <span style="color: var(--primary);">browse</span></p>
+                    <input type="file" id="fileInput" accept="image/*">
+                </div>
+
+                <div id="previewContainer" style="display: none; position: relative;">
+                    <div class="image-container">
+                        <img id="imagePreview" src="" alt="Preview">
+                    </div>
+                    <button id="removeImg" class="btn-predict" style="background: var(--accent); padding: 0.5rem 1rem; position: absolute; top: 10px; right: 10px;">
+                        <i class="fa-solid fa-times"></i>
+                    </button>
+                </div>
+
+                <button class="btn-predict" id="predictBtn" disabled>
+                    <i class="fa-solid fa-microchip"></i> START AI ANALYSIS
+                </button>
+            </div>
+
+            <!-- Right Side: Results -->
+            <div class="glass-card" id="resultsPlaceholder">
+                <div style="text-align: center; color: var(--text-dim); padding: 4rem 0;">
+                    <i class="fa-solid fa-robot" style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.2;"></i>
+                    <p>Waiting for analysis...</p>
+                </div>
+            </div>
+
+            <div class="glass-card results-section" id="resultsSection">
+                <div id="statusBadge" class="status-badge">FRACTURED</div>
+                
+                <div class="metrics">
+                    <div class="metric-item">
+                        <div class="metric-value" id="probValue">0%</div>
+                        <div class="metric-label">Confidence</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">Multi-Task</div>
+                        <div class="metric-label">AI Logic</div>
+                    </div>
+                </div>
+
+                <div class="result-images">
+                    <div class="image-container">
+                        <img id="bboxImg" src="" alt="Localization">
+                        <span class="image-label">Localization (BBox)</span>
+                    </div>
+                    <div class="image-container">
+                        <img id="maskImg" src="" alt="Segmentation">
+                        <span class="image-label">Segmentation (Mask)</span>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1rem; border-top: 1px solid var(--glass-border); padding-top: 1rem;">
+                    <p style="font-size: 0.9rem; color: var(--text-dim); text-align: center;">
+                        <i class="fa-solid fa-info-circle"></i> This analysis is AI-generated and should be reviewed by a medical professional.
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <div class="loader" id="loader"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
