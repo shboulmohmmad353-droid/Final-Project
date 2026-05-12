@@ -561,7 +561,7 @@ def get_callbacks(patience_es, patience_lr):
                           factor=0.5, min_lr=1e-8, verbose=1),
     ]
 
-# 17. PHASE 1: FROZEN BACKBONE — 5 epochs
+# 17. PHASE 1: FROZEN BACKBONE — 10 epochs
 print("\n" + "="*60)
 print(f" PHASE 1 — {MODEL_CHOICE} frozen | LR=1e-3 | Epochs 1-{EPOCHS//2}")
 print("="*60)
@@ -569,7 +569,7 @@ compile_model(model, LR_PHASE1)
 history1 = model.fit(train_ds, validation_data=val_ds,
                       epochs=EPOCHS//2, callbacks=get_callbacks(4, 2), verbose=1)
 
-# 18. PHASE 2: FINE-TUNE — 5 epochs
+# 18. PHASE 2: FINE-TUNE — 10 epochs
 freeze_map = {
     'EfficientNetB0': 100,
     'EfficientNetB3': 130,
@@ -772,7 +772,7 @@ unique_bps = sorted(list(set(test_bps)))
 fig, axes = plt.subplots(1, len(unique_bps), figsize=(4.5 * len(unique_bps), 4.5))
 if len(unique_bps) == 1:
     axes = [axes]
-fig.suptitle('🔬 Confusion Matrices per Body Part', fontsize=16, fontweight='bold', y=1.05)
+fig.suptitle(' Confusion Matrices per Body Part', fontsize=16, fontweight='bold', y=1.05)
 
 for idx, bp in enumerate(unique_bps):
     bp_indices = [i for i, part in enumerate(test_bps) if part == bp]
