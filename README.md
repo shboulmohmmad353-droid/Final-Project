@@ -46,5 +46,3 @@ Healthy bones are strong enough to withstand strong and sudden impacts, but bone
 - Source: Kaggle
 - Kaggle Link:https://www.kaggle.com/datasets/mohsenzergani/fracatlas-2024-4k
   
-- Trust and Authenticity: More than 50% of lesions are confirmed through histopathology.
-- Harvard Link: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T
